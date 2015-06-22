@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "Library for conveniently working with stateful computations",
-    "repository": "https://github.com/sgraf812/elm-state.git",
+    "repository": "https://github.com/sgraf812/elm-stateful.git",
     "license": "MIT",
     "source-directories": [
         "src"
