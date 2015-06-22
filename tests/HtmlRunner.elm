@@ -13,13 +13,7 @@ import IO.IO exposing (..)
 import IO.Runner exposing (Request, Response)
 import IO.Runner as Run
 
-import Test.State as State
-
-tests : Test
-tests =
-    suite "State tests"
-    [ State.tests
-    ]
+import Test.Stateful
 
 main : Element
-main = Element.runDisplay tests
+main = Element.runDisplay Test.Stateful.tests

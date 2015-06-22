@@ -11,16 +11,10 @@ import IO.IO exposing (..)
 import IO.Runner exposing (Request, Response)
 import IO.Runner as Run
 
-import Test.State as State
-
-tests : Test
-tests =
-    suite "State tests"
-    [ State.tests
-    ]
+import Test.Stateful
 
 console : IO ()
-console = Console.runDisplay tests
+console = Console.runDisplay Test.Stateful.tests
 
 port requests : Signal Request
 port requests = Run.run responses console
