@@ -1,12 +1,14 @@
 {
     "version": "1.0.0",
-    "summary": "Encapsulating mutable state via hidden threading",
+    "summary": "Library for conveniently working with stateful computations",
     "repository": "https://github.com/sgraf812/elm-state.git",
-    "license": "BSD3",
+    "license": "MIT",
     "source-directories": [
         "src"
     ],
-    "exposed-modules": [],
+    "exposed-modules": [
+        "State"
+    ],
     "dependencies": {
         "elm-lang/core": "2.1.0 <= v < 3.0.0"
     },

@@ -1,14 +1,7 @@
 module State
   ( State
-  , run
-  , new
-  , get
-  , put
-  , modify
-  , map
-  , andMap
-  , andThen
-  , sequence
+  , new, run, get, put, modify
+  , map, andMap, andThen, sequence
   ) where
 
 
