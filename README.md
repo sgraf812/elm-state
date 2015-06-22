@@ -1,18 +1,18 @@
-# State [![Build Status](https://travis-ci.org/sgraf812/elm-state.svg)](https://travis-ci.org/sgraf812/elm-state)
+# Stateful [![Build Status](https://travis-ci.org/sgraf812/elm-stateful.svg)](https://travis-ci.org/sgraf812/elm-stateful)
 
-A small libraries with primitives for working with stateful computations. This is neat when trying to imitate mutable variables, for example random number seeds or just generating automatically incrementing ids like so:
+A small library with primitives for working with stateful computations. This is neat when trying to imitate mutable variables, for example random number seeds or just generating automatically incrementing ids like so:
 
 ```
-nextId : State Int Int
+nextId : Stateful Int Int
 nextId =
-  State.get `State.andThen` \id ->
-  State.put (id + 1) `State.andThen` \_ ->
-  State.new id
+  Stateful.get `Stateful.andThen` \id ->
+  Stateful.put (id + 1) `Stateful.andThen` \_ ->
+  Stateful.return id
 
 threeIds : List Int
 threeIds =
-  fst <| State.run
-    (State.sequence
+  fst <| Stateful.run
+    (Stateful.sequence
       [ nextId
       , nextId
       , nextId
@@ -21,4 +21,4 @@ threeIds =
 -- threeIds = [3, 4, 5]
 ```
 
-The advantage here is that we don't need to manually thread a counter variable.
+The advantage here is that we don't need to manually thread a counter variable in a let binding.

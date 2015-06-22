@@ -99,16 +99,16 @@ It passes the state value through each computation and feeds the follow-up with 
 
 To illustrate that with the auto-incrementing column ID generator from the README:
 
-    nextId : State Int Int
+    nextId : Stateful Int Int
     nextId =
-      State.get `State.andThen` \id ->
-      State.put (id + 1) `State.andThen` \_ ->
-      State.return id
+      Stateful.get `Stateful.andThen` \id ->
+      Stateful.put (id + 1) `Stateful.andThen` \_ ->
+      Stateful.return id
 
     threeIds : List Int
     threeIds =
-      fst <| State.run
-        (State.sequence
+      fst <| Stateful.run
+        (Stateful.sequence
           [ nextId
           , nextId
           , nextId
